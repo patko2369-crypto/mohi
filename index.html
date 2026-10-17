@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>برای محدثه ❤️</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: Tahoma, sans-serif;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg,#ff758c,#ff7eb3,#ffc3a0);
+}
+.card {
+  width: 90%;
+  max-width: 440px;
+  padding: 30px 22px;
+  border: 1px solid #ffffff80;
+  border-radius: 28px;
+  background: #ffffff30;
+  box-shadow: 0 12px 40px #78002835;
+  backdrop-filter: blur(12px);
+}
+.heart { font-size: 70px; animation: beat 1s infinite; }
+h1 { font-size: 30px; }
+p { font-size: 18px; line-height: 2; }
+button {
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 30px;
+  background: white;
+  color: #e84370;
+  font-size: 16px;
+  cursor: pointer;
+}
+#secret { display: none; line-height: 2.2; margin-top: 20px; }
+.floating {
+  position: fixed;
+  bottom: -40px;
+  animation: rise 7s linear forwards;
+  pointer-events: none;
+}
+@keyframes beat {
+  50% { transform: scale(1.18); }
+}
+@keyframes rise {
+  to { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="heart">❤️</div>
+  <h1>محدثه جانم 🌹</h1>
+  <p>
+    بعضی آدم‌ها خودشون شبیه معجزه‌ان...
+    <br>
+    تو یکی از قشنگ‌ترین اتفاق‌های دنیای منی 💖
+  </p>
+  <button onclick="document.getElementById('secret').style.display='block'">
+    یه پیام مخصوص تو 💌
+  </button>
+  <div id="secret">
+    محدثه عزیزم ❤️<br>
+    امیدوارم همیشه بخندی و دلت پر از آرامش باشه.<br>
+    حضورت دنیا رو قشنگ‌تر می‌کنه 🌸<br>
+    دوست‌داشتنیِ من 💕
+  </div>
+</div>
+<script>
+const emojis = ["❤️","💕","💗","💖","🌸"];
+setInterval(() => {
+  const h = document.createElement("span");
+  h.className = "floating";
+  h.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+  h.style.left = Math.random()*100 + "vw";
+  h.style.fontSize = (18+Math.random()*24) + "px";
+  document.body.appendChild(h);
+  setTimeout(() => h.remove(), 7500);
+}, 500);
+</script>
+</body>
+</html>
